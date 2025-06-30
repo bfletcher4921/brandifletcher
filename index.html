@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles/style.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
   </style>
 </head>
 
@@ -22,8 +23,7 @@
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <!--change to home icon-->
-      <a class="navbar-brand" href="#">
+       <a class="navbar-brand" href="#">
         <i class="bi bi-house-fill"></i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,50 +31,60 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#" style="font-family: 'Ubuntu', sans-serif; font-weight: 500;">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#" style="font-family: 'Ubuntu', sans-serif; font-weight: 200;">Link</a>
           </li>
         </ul>
       </div>
       </div>
-    </nav>
+  </nav>
   <!-- Main content can go here -->
    <!--Example-->
-  <section>
-<main class="container mt-4">
-    <div class="row">
+   <main class="container mt-4">
+     <section class="container">
+      <!--<div class="row">
         <div class="col-md-12">
-            <h2 style="font-family: ' Space Mono', monospace;">Welcome to b|f</h2>
-          <p style="font-family: 'Roboto Mono', monospace;">This is a simple example of a webpage using Bootstrap and custom styles.</p>
-    </div>
-  </div>
+          <h2 style="font-family: 'Space Mono', monospace;">Welcome to b|f</h2>
+          <p style="font-family: 'Ubuntu', sans-serif;">This is a simple example of a webpage using Bootstrap and custom styles.</p>
+        </div>
+      </div>-->
     <!-- First row dev card-->
 
-    <div class="container">
-      <div class="mh-100" style="width 100px; height: 200px; background-color: #f40f00">
-        <p>Bio goes here</p>
+                <!-- Profile Section -->
+    <div class="profile">
+      <img src="images/devpic.jpg" alt="Picture of web developer BF" style="width: 130px;height:128px;">
+      <h2>Brandi Fletcher</h2>
+      <p>Developer Type</p>
+      <div class="social-icons">
+        <span></span><span></span><span></span><span></span><span></span>
       </div>
+      <p>email: bfletcher4921@gmail.com<br>phone: 123-456-7890</p>
+      <button class="download-btn">Download CV</button>
     </div>
+            <div class="col">bio</div>
+            <div class="col">blog</div>
+          </div>
+           </div>
+      </div>
 
-    <div class="container">
-      <div class="col">
-        projects
+      <div class="container">
+        <div class="col">
+         <p>projects</p>
+        </div>
       </div>
-    </div>
-    </section>
-    <section>
-      <div class="row">
-        blogs
-      </div>
-    </section>
+
+      
+     </section>
        <!--End example-->
 
+   </main>
+
     <!--Projects & resources-->
-       <footer>
-      <p>Footer</p>
-    </footer>
+  <footer>
+    <p>Footer</p>
+  </footer>
 
     <!---- put scripts (these are bootstrap) directly before closing the body. Nothing in between. -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
