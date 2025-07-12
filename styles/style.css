@@ -97,6 +97,15 @@ background-size: cover;
   margin-top: auto;
 }
 
+.footer-text-box {
+  background-color: rgba(91, 79, 79, 0.878);
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 0 auto;
+  display: inline-block;
+  width: fit-content;
+}
+
 /* Individual icon colors */
 .bi-filetype-js { color: #f7df1e; }      /* JavaScript yellow */
 .bi-filetype-html { color: #fe3e09; }    /* HTML orange */
