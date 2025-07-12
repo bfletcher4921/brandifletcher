@@ -98,12 +98,17 @@ background-size: cover;
 }
 
 .footer-text-box {
-  background-color: rgba(91, 79, 79, 0.878);
+  background-color: rgba(252, 250, 250, 0.878);
   border-radius: 8px;
   padding: 15px 20px;
   margin: 0 auto;
   display: inline-block;
   width: fit-content;
+  color: #000000 !important;
+}
+
+.footer-text-box a {
+  color: #000000 !important;
 }
 
 /* Individual icon colors */
