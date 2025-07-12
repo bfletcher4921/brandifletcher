@@ -14,6 +14,7 @@
 </head>
 
 <body class="container-fluid vh-100">
+  <a id="top"></a>
   <header style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 2rem; text-align: center;">
     <!-- todo: rmv inline style => style.css -->
     <h1>b|f</h1>
@@ -21,16 +22,16 @@
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-       <a class="navbar-brand" href="#">
+       <a class="navbar-brand" href="#top">
         <i class="bi bi-house-fill"></i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!--<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#" style="font-family: 'Ubuntu', sans-serif; font-weight: 500;">Home</a>
-          </li>
+          <!--</li>
           <li class="nav-item">
             <a class="nav-link" href="#" style="font-family: 'Ubuntu', sans-serif; font-weight: 200;">Link</a>
           </li>
@@ -38,9 +39,9 @@
       </div>
       </div>
   </nav>
-  <h3 id="userGreeting"></h3>
+<p id="userGreeting" class="fs-4 text-center"></p>
 
-  <!-- main container content -->
+<!-- main container content -->
   <div class="row mt-3 h-75 container-fluid">
     <div class="col-md-3 p-2 m-3">
       <!--dev card border-->
@@ -55,7 +56,7 @@
           <i class="bi bi-bootstrap"></i>
           <i class="bi bi-github"></i>
         </div>
-        <p>email: bfletcher4921@gmail.com<br>phone: 123-456-7890</p>
+        <p class="contact-info">email: bfletcher4921@gmail.com<br>phone: 123-456-7890</p>
         <a href="https://8ed1823f-3ff6-4b3f-a2dd-490d39a72f9d.filesusr.com/ugd/62a588_423c3a2f38314c7cbee68c07969f6884.pdf" target="_blank" download="Brandi_Fletcher_CV.pdf" class="btn btn-primary download-btn">Download CV</a>
       </div>
     </div>  
@@ -127,15 +128,15 @@
    
     <!--to do add appropriate wave, validator links-->
     <!--Projects & resources in footer-->
-  <footer class="footer mt-auto text-center p-3 flex-shrink-0" style="background-color: rgb(255, 8, 8);">
+  <footer class="footer mt-auto text-center p-3 flex-shrink-0" style="background-color: rgb(250, 69, 19);">
     <div class="container-fluid text-center">
-      © 2025 Copyright:
-      <a class="text-body" href="https://github.com/bfletcher4921/brandifletcher" target="_blank">b | f</a> 
+      <a class=text-white>© 2025 Copyright:</a>
+      <a class="text-white" href="https://github.com/bfletcher4921/brandifletcher" target="_blank">b | f</a> 
       
       <!--add link to wireframe it goes inside the a anchor-->
       <p>
-       <a class="text-body" target="_blank" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbfletcher4921.github.io%2Fbrandifletcher%2F">Check the validity of this page</a> | 
-      <a class="text-body" target="_blank" href="https://wave.webaim.org/report#/https://bfletcher4921.github.io/vigilant-adventure-superGame/">Check the accessibility of this page</a>
+       <a class="text-white" target="_blank" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbfletcher4921.github.io%2Fbrandifletcher%2F">Check the validity of this page</a><a class="text-white"> | </a>
+      <a class="text-white" target="_blank" href="https://wave.webaim.org/report#/https://bfletcher4921.github.io/brandifletcher/">Check the accessibility of this page</a>
       </p>
     </div>
   </footer>
