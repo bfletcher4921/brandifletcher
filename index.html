@@ -142,34 +142,47 @@
     <!--- links js script to index html-->
     <script src="scripts/script.js"></script>
     <script>
-  const DATA_URL = "https://github.com/bfletcher4921/devBlogData.git"; // Replace with your real JSON URL
-
-  fetch(DATA_URL)
-    .then(response => response.json())
-    .then(posts => {
-      const card = document.querySelector(".seeMe");
-
-      // clear existing entries if needed
-      card.querySelectorAll(".blogEntry").forEach(entry => entry.remove());
-
-      // add blog posts from data
-      posts.forEach(post => {
-        const entry = document.createElement("div");
-        entry.className = "blogEntry m-2 border border-1 rounded border-danger";
-
-        entry.innerHTML = `
-          <h3>${post.title}</h3>
-          <p>${post.content}</p>
-        `;
-
-        // insert before the button section
-        const buttonRow = card.querySelector(".mt-auto");
-        card.insertBefore(entry, buttonRow);
-      });
-    })
-    .catch(error => {
-      console.error("Failed to load blog data:", error);
+  // function to load and display blog posts in Dev Life column
+async function loadBlogPosts() {
+  try {
+    const response = await fetch('https://raw.githubusercontent.com/bfletcher4921/devBlogData/main/blog-entries.json');
+    const blogData = await response.json();
+    
+    // find the Dev Life column container
+    const devLifeColumn = document.querySelector('#devLifeCard');
+    
+    // clear existing blog entries (except header and button)
+    const existingEntries = devLifeColumn.querySelectorAll('.blogEntry');
+    existingEntries.forEach(entry => entry.remove());
+    
+    // add new blog posts
+    const buttonContainer = devLifeColumn.querySelector('.mt-auto');
+    
+    blogData.forEach(post => {
+      const blogEntry = document.createElement('div');
+      blogEntry.className = 'blogEntry m-2 border border-1 rounded border-danger p-2';
+      blogEntry.innerHTML = `
+        <h3>${post.title}</h3>
+        <small class="text-muted"><i class="bi bi-person-fill"></i> ${post.author} <i class="bi bi-calendar-fill"></i> ${post.date}</small>
+        <p>${post.content}</p>
+        <div class="mt-2">
+          ${post.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
+        </div>
+      `;
+      
+      // insert before the button container
+      devLifeColumn.insertBefore(blogEntry, buttonContainer);
     });
+    
+  } catch (error) {
+    console.error('Error loading blog posts:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // call the function to load blog posts when the content is fully loaded
+  loadBlogPosts();
+});
 </script>
 
 </body>
