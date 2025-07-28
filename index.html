@@ -83,7 +83,7 @@
             </div>
             <div class="card-footer d-flex flex-column gap-3">
               <a href="https://bfletcher4921.github.io/vigilant-adventure-superGame/" target="_blank" class="btn btn-primary"><i class="bi bi-joystick">Play SuperGame!</i></a>
-              <a href="https://github.com/bfletcher4921/vigilant-adventure-superGame.git" target="_blank" class="btn btn-primary">&lt;<i class="bi bi-github">source code&gt;</i></a>
+              <a href="https://github.com/bfletcher4921/vigilant-adventure-superGame/blob/main/scripts/gameScript.js" target="_blank" class="btn btn-primary">&lt;<i class="bi bi-github">source code&gt;</i></a>
             </div>
           </div>
           <div class="card shadow-sm text-center" style="aspect-ratio: 1 / 1;">
@@ -106,19 +106,13 @@
       
     </div>
     <div class="col-md-4 p-2 m-3">
-      <div class="card seeMe h-100" style="overflow-y: auto;">
+      <div class="card seeMe h-100" id="devLifeCard" style="overflow-y: auto;">
         <h2 class="text-primary header-bg"><i class="bi bi-journal-text"></i>Dev Life</h2>
-        <div class="blogEntry m-2 border border-1 rounded border-danger">
-          <h3>6 hours of 'which tab is that in'</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, dolor id egestas efficitur, leo lacus posuere eros, a feugiat nulla ante id justo. Curabitur dapibus est libero, eu dapibus purus auctor vel. Fusce venenatis nunc ipsum, sit amet ornare velit eleifend quis. In a tellus nec dolor rutrum facilisis ac at ex. Curabitur elementum at quam sed varius. Pellentesque mauris justo, convallis ut tincidunt id, vulputate eu mi. Pellentesque odio arcu, elementum a nibh eu, vulputate pretium dolor.</p>
-        </div>
-        <div class="blogEntry m-2 border border-1 rounded border-danger">
-          <h3>Commit Happens</h3>     
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, dolor id egestas efficitur, leo lacus posuere eros, a feugiat nulla ante id justo. Curabitur dapibus est libero, eu dapibus purus auctor vel. Fusce venenatis nunc ipsum, sit amet ornare velit eleifend quis. In a tellus nec dolor rutrum facilisis ac at ex. Curabitur elementum at quam sed varius. Pellentesque mauris justo, convallis ut tincidunt id, vulputate eu mi. Pellentesque odio arcu, elementum a nibh eu, vulputate pretium dolor.</p>
-        </div>
-        <div class="blogEntry m-2 border border-1 rounded border-danger">
-          <h3>The Bug Stops Here! What to do when your changes break your code</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, dolor id egestas efficitur, leo lacus posuere eros, a feugiat nulla ante id justo. Curabitur dapibus est libero, eu dapibus purus auctor vel. Fusce venenatis nunc ipsum, sit amet ornare velit eleifend quis. In a tellus nec dolor rutrum facilisis ac at ex. Curabitur elementum at quam sed varius. Pellentesque mauris justo, convallis ut tincidunt id, vulputate eu mi. Pellentesque odio arcu, elementum a nibh eu, vulputate pretium dolor.</p>
+        <!-- blog entries will be loaded here by JavaScript -->
+        <div class="mt-auto p-3">
+          <a href="https://bfletcher4921.github.io/blogAdmin/" target="_blank" class="btn btn-primary w-100">
+            <i class="bi bi-gear-fill"></i> Blog Admin App
+          </a>
         </div>
       </div>  
     </div>
@@ -147,6 +141,37 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
     <!--- links js script to index html-->
     <script src="scripts/script.js"></script>
+    <script>
+  const DATA_URL = "https://github.com/bfletcher4921/devBlogData.git"; // Replace with your real JSON URL
+
+  fetch(DATA_URL)
+    .then(response => response.json())
+    .then(posts => {
+      const card = document.querySelector(".seeMe");
+
+      // clear existing entries if needed
+      card.querySelectorAll(".blogEntry").forEach(entry => entry.remove());
+
+      // add blog posts from data
+      posts.forEach(post => {
+        const entry = document.createElement("div");
+        entry.className = "blogEntry m-2 border border-1 rounded border-danger";
+
+        entry.innerHTML = `
+          <h3>${post.title}</h3>
+          <p>${post.content}</p>
+        `;
+
+        // insert before the button section
+        const buttonRow = card.querySelector(".mt-auto");
+        card.insertBefore(entry, buttonRow);
+      });
+    })
+    .catch(error => {
+      console.error("Failed to load blog data:", error);
+    });
+</script>
+
 </body>
 
 </html>
